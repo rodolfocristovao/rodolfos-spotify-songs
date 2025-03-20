@@ -1,4 +1,4 @@
-const API_URL = 'https://rodolfos-spotify-songs-bqatu66fa-rodolfo-cristovaos-projects.vercel.app';
+const API_URL = 'https://rodolfos-spotify-songs-3fbdkcpg8-rodolfo-cristovaos-projects.vercel.app';
 
 // DOM Elements
 const loadingElement = document.getElementById('loading');

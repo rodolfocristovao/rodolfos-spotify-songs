@@ -6,7 +6,18 @@ const SpotifyWebApi = require('spotify-web-api-node');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+// Configure CORS
+app.use(cors({
+    origin: [
+        'http://localhost:8080',
+        'https://rodolfocristovao.github.io',
+        'https://rodolfocristovao.github.io/rodolfos-spotify-songs'
+    ],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+
 app.use(express.json());
 
 // Debug: Log environment variables (without sensitive data)
