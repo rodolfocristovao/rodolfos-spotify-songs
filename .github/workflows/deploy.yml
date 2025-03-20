@@ -3,6 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -21,10 +25,11 @@ jobs:
 
       - name: Replace API URL
         run: |
-          sed -i 's|process.env.API_URL|"https://rodolfos-spotify-songs.vercel.app"|g' public/app.js
+          sed -i 's|process.env.API_URL|"https://rodolfos-spotify-songs-bqatu66fa-rodolfo-cristovaos-projects.vercel.app"|g' public/app.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public 
+          publish_dir: ./public
+          publish_branch: gh-pages 
