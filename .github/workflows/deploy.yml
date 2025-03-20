@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,8 +28,8 @@ jobs:
           sed -i 's|process.env.API_URL|"https://rodolfos-spotify-songs-bqatu66fa-rodolfo-cristovaos-projects.vercel.app"|g' public/app.js
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages 
+          branch: gh-pages
+          folder: public
+          clean: true 
