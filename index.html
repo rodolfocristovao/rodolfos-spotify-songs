@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Spotify Liked Songs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+        <header>
+            <h1>My Spotify Liked Songs</h1>
+            <p class="subtitle">Your favorite tracks in one place</p>
+        </header>
+        <main>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading your songs...</p>
+            </div>
+
+            <div id="error" class="error hidden">
+                <p>⚠️ Failed to load songs. Please try again later.</p>
+            </div>
+
+            <div id="songs-container" class="songs-grid">
+                <!-- Songs will be loaded here -->
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Spotify API</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
