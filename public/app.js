@@ -1,4 +1,4 @@
-const API_URL = process.env.API_URL || 'http://localhost:3000';
+const API_URL = 'https://rodolfos-spotify-songs-bqatu66fa-rodolfo-cristovaos-projects.vercel.app';
 
 // DOM Elements
 const loadingElement = document.getElementById('loading');
